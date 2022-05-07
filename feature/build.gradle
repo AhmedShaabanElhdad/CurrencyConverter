@@ -45,8 +45,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    api "com.facebook.android:facebook-android-sdk:[5,6)"
-
 
     // Core
     implementation "androidx.appcompat:appcompat:$appcompat"
