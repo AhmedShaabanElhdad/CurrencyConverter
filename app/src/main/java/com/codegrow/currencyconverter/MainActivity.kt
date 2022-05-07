@@ -2,7 +2,6 @@ package com.codegrow.currencyconverter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.codegrow.currencyconverter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Example of a call to a native method
-        binding.sampleText.text = stringFromJNI()
     }
 
+    external fun getAPIKey(): String
 
-    external fun stringFromJNI(): String
+    init {
+        System.loadLibrary("currencyconverter")
+    }
 }
