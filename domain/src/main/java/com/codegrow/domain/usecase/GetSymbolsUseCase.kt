@@ -9,8 +9,8 @@ import javax.inject.Inject
 
 class GetSymbolsUseCase @Inject constructor(
     private val repository: SymbolRepository,
-) : BaseUseCase<List<Symbol>, Any>() {
-    override suspend fun buildRequest(params: Any?): Flow<Resource<List<Symbol>>> {
+) : BaseUseCase<HashMap<String, String>, Any>() {
+    override suspend fun buildRequest(params: Any?): Flow<Resource<HashMap<String, String>>> {
         return repository.getSymbol()
     }
 }
