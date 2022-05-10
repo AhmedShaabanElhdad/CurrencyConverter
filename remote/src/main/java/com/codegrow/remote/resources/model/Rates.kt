@@ -1,4 +1,4 @@
-package com.codegrow.remote.response.model
+package com.codegrow.remote.resources.model
 
 data class Rates(
     val CAD: Double,

@@ -9,6 +9,15 @@ plugins {
 android {
     compileSdk 31
 
+//    sourceSets.test.resources.srcDirs += ["src/main"]
+//    sourceSets {
+//        main.java.srcDirs += 'src/main/kotlin'
+//        main {
+//            assets.srcDirs = ['src/main/assets', 'src/test/java/com/codegrow/assets/resources ']
+//
+//        }
+//    }
+
     defaultConfig {
         minSdk 21
         targetSdk 31
@@ -60,5 +69,8 @@ dependencies {
     testImplementation "androidx.test:runner:$testRunnerVersion"
     // Mock objects
     testImplementation "io.mockk:mockk:$mockkVersion"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockServerVersion"
+    testImplementation("com.squareup.okhttp3:okhttp:4.0.0")
 
 }

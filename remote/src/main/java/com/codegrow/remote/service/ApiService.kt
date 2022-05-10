@@ -1,10 +1,10 @@
 package com.codegrow.remote.service
 
 
-import com.codegrow.remote.response.ConversionResponse
-import com.codegrow.remote.response.HistoricalResponse
-import com.codegrow.remote.response.RateResponse
-import com.codegrow.remote.response.SymbolResponse
+import com.codegrow.remote.resources.ConversionResponse
+import com.codegrow.remote.resources.HistoricalResponse
+import com.codegrow.remote.resources.RateResponse
+import com.codegrow.remote.resources.SymbolResponse
 import retrofit2.http.*
 
 
@@ -32,7 +32,7 @@ interface ApiService {
 
     @GET("{date}")
     suspend fun getHistoricalRate(
-        @Query("date") date: String,
+        @Path("date") date: String,
         @Query("symbols") symbols: String,
         @Query("base") base: String,
         @Query("apikey") key: String,

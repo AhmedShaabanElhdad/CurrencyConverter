@@ -1,6 +1,6 @@
-package com.codegrow.remote.response
+package com.codegrow.remote.resources
 
-import com.codegrow.remote.response.model.Rates
+import com.codegrow.remote.resources.model.Rates
 
 data class RateResponse(
     val base: String,

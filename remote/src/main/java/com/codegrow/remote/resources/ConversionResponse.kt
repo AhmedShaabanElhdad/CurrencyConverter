@@ -1,7 +1,7 @@
-package com.codegrow.remote.response
+package com.codegrow.remote.resources
 
-import com.codegrow.remote.response.model.Info
-import com.codegrow.remote.response.model.Query
+import com.codegrow.remote.resources.model.Info
+import com.codegrow.remote.resources.model.Query
 
 data class ConversionResponse(
     val date: String,
