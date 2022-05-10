@@ -29,6 +29,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        // Open data binding
+        dataBinding true
+        // Open view binding
+        viewBinding true
+    }
 }
 
 dependencies {
