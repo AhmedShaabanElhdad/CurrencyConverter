@@ -1,6 +1,6 @@
-package com.codegrow.remote.resources.model
+package com.codegrow.entity
 
-data class Rates(
+data class Rate(
     val CAD: Double,
     val EUR: Double,
     val USD: Double

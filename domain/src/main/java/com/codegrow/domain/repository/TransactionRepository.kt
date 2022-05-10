@@ -12,6 +12,9 @@ interface TransactionRepository {
         to :String
     ): Flow<Resource<Double>>
 
-    suspend fun getHistorical(): Flow<Resource<Double>>
+    suspend fun getHistorical(
+        start_date:String,
+        end_date:String,
+    ): Flow<Resource<HashMap<String,Rat>>>
 
 }

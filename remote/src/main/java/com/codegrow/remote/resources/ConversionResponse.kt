@@ -5,6 +5,7 @@ import com.codegrow.remote.resources.model.Query
 
 data class ConversionResponse(
     val date: String,
+    val message: String,
     val info: Info,
     val query: Query,
     val result: Double,

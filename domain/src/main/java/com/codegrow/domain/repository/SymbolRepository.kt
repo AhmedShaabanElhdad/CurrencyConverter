@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface SymbolRepository {
 
-    suspend fun getSymbol(): Flow<Resource<List<Symbol>>>
+    suspend fun getSymbol(): Flow<Resource<HashMap<String,String>>>
 
 }
