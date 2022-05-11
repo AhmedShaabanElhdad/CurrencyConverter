@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.codegrow.common.core.BaseFragment
 import com.codegrow.entity.Symbol
+import com.codegrow.feature.R
 import com.codegrow.feature.converter.main.adapter.SymbolSpinnerAdapter
 import com.codegrow.feature.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,9 +35,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         get() = FragmentMainBinding::inflate
 
     override fun prepareView(savedInstanceState: Bundle?) {
+        setupSpinner()
+        setEventListener()
+        initObservers()
+
+    }
+
+    private fun setupSpinner() {
         binding.spnFirstCountry.adapter = fromAdapter
         binding.spnSecondCountry.adapter = toAdapter
+    }
 
+    private fun setEventListener() {
         binding.btnConvert.setOnClickListener {
             viewModel.setEvent(
                 MainContract.Event.Convert(
@@ -46,9 +57,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             )
         }
 
-
-        initObservers()
-
+        binding.btnDetails.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+        }
     }
 
 

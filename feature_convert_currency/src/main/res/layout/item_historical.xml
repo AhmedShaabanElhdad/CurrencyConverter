@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="rate"
+            type="com.codegrow.entity.Rate" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_generic"
+            android:layout_marginEnd="@dimen/spacing_generic"
+            android:layout_marginTop="@dimen/spacing_xlarge"
+            app:cardBackgroundColor="@color/white_opacity"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_tiny"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/Date"
+                        android:textSize="18sp"
+                        tools:text="Date : " />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_weather_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{rate.date}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        tools:text="@tools:sample/lorem" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/base"
+                        android:textSize="18sp"
+                        tools:text="base : " />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_weather_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EUR"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        tools:text="@tools:sample/lorem" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="CAD"
+                        android:textSize="18sp"
+                        tools:text="CAD : " />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_cad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:text="@{String.valueOf(rate.CAD)}"
+                        tools:text="@tools:sample/lorem" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="EUR"
+                        android:textSize="18sp"
+                        tools:text="EUR : " />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_eur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:text="@{String.valueOf(rate.EUR)}"
+                        tools:text="@tools:sample/lorem" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="USD"
+                        android:textSize="18sp"
+                        tools:text="AUS : " />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_aus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:text="@{String.valueOf(rate.USD)}"
+                        tools:text="@tools:sample/lorem" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <Button
+                    android:id="@+id/tv_see_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/more"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/spacing_generic"
+                    android:background="@drawable/btn_main_round"
+                    android:backgroundTint="@color/main_green"
+                    app:cornerRadius="@dimen/spacing_generic"
+                    android:layout_gravity="center"
+                    tools:text="see more" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
