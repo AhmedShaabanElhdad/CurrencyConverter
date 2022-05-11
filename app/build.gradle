@@ -44,9 +44,12 @@ android {
         }
     }
     buildFeatures {
+        // Open data binding
+        dataBinding true
+        // Open view binding
         viewBinding true
     }
-    ndkVersion '21.4.7075529'
+    ndkVersion '24.0.8215888'
 }
 
 dependencies {
@@ -54,7 +57,7 @@ dependencies {
     implementation project(":common")
     implementation project(":domain")
     implementation project(":data")
-    implementation project(":feature")
+    implementation project(':feature_convert_currency')
     implementation project(":entity")
     implementation project(":local")
     implementation project(":remote")

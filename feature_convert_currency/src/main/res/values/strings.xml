@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="convert">convert</string>
+    <string name="from">convert</string>
+    <string name="to">convert</string>
+    <string name="amount">amount</string>
+    <string name="result">result</string>
+    <string name="details">details</string>
+    <string name="currency">Currency</string>
+    <string name="converter">Converter</string>
+    <string name="converted_amount">Converted currency</string>
+</resources>
