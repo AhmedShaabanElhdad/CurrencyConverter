@@ -15,6 +15,6 @@ interface TransactionRepository {
     suspend fun getHistorical(
         start_date:String,
         end_date:String,
-    ): Flow<Resource<HashMap<String,Rat>>>
+    ): Flow<Resource<HashMap<String,Rate>>>
 
 }

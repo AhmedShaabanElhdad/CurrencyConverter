@@ -12,7 +12,7 @@ import java.time.temporal.TemporalAmount
 import javax.inject.Inject
 
 data class ConvertInput(
-    val amount: Double,
+    val amount: Double?,
     val from: String,
     val to: String,
 )
@@ -21,7 +21,7 @@ class ConvertUseCase @Inject constructor(
     private val repository: TransactionRepository,
 ) : BaseUseCase<Double, ConvertInput>() {
     override suspend fun buildRequest(params: ConvertInput?): Flow<Resource<Double>> {
-        if (params?.amount!! <= 0  ) {
+        if (params?.amount == null || params.amount.isNaN()) {
             return flow { emit(Resource.Error("invalid Amount")) }
         }
         if (params.from.isEmpty()) {
@@ -30,6 +30,6 @@ class ConvertUseCase @Inject constructor(
         if (params.to.isEmpty()) {
             return flow { emit(Resource.Error("invalid symbol to")) }
         }
-        return repository.convert(amount = params!!.amount,from = params.from,to = params.to)
+        return repository.convert(amount = params!!.amount!!, from = params.from, to = params.to)
     }
 }

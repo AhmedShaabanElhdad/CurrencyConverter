@@ -25,7 +25,7 @@ class TransactionRepositoryImp @Inject constructor(
     override suspend fun convert(amount: Double, from: String, to: String): Flow<Resource<Double>> {
         return flow {
             try {
-                val data = apiService.convert(amount,from,to,"")
+                val data = apiService.convert(amount,from,to)
                 if (data.success) {
                     emit(Resource.Success(data.result))
                 } else
@@ -42,7 +42,7 @@ class TransactionRepositoryImp @Inject constructor(
     ): Flow<Resource<HashMap<String,Rate>>> {
         return flow {
             try {
-                val data = apiService.getHistoricalSearch(start_date,end_date,"")
+                val data = apiService.getHistoricalSearch(start_date,end_date)
                 if (data.success) {
                     emit(Resource.Success(data.rates))
                 } else

@@ -15,7 +15,7 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/entity" />
-            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature_convert_currency" />
             <option value="$PROJECT_DIR$/local" />
             <option value="$PROJECT_DIR$/remote" />
           </set>

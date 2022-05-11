@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="cnr_color">#D35AE8</color>
+    <color name="white_opacity">#eeffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="light_grey">#dedede</color>
+    <color name="main_green">#8BC34A</color>
+    <color name="main_blue">#2196F3</color>
+</resources>

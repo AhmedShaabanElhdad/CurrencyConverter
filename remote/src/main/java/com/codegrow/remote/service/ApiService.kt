@@ -12,7 +12,7 @@ interface ApiService {
 
     @GET("symbols")
     suspend fun getSymbol(
-        @Query("apikey") key: String
+        @Query("apikey") key: String = "H6hntPyzizCpVakStIJDbWJYu8fKWQor"
     ):SymbolResponse
 
     @GET("convert")
@@ -20,14 +20,14 @@ interface ApiService {
         @Query("amount") amount: Double,
         @Query("from") from: String,
         @Query("to") to: String,
-        @Query("apikey") key: String,
+        @Query("apikey") key: String = "H6hntPyzizCpVakStIJDbWJYu8fKWQor",
     ):ConversionResponse
 
     @GET("timeseries")
     suspend fun getHistoricalSearch(
         @Query("start_date") start_date: String,
         @Query("end_date") end_date: String,
-        @Query("apikey") key: String,
+        @Query("apikey") key: String = "H6hntPyzizCpVakStIJDbWJYu8fKWQor",
     ):HistoricalResponse
 
     @GET("{date}")
@@ -35,7 +35,7 @@ interface ApiService {
         @Path("date") date: String,
         @Query("symbols") symbols: String,
         @Query("base") base: String,
-        @Query("apikey") key: String,
+        @Query("apikey") key: String = "H6hntPyzizCpVakStIJDbWJYu8fKWQor",
     ): RateResponse
 
 }

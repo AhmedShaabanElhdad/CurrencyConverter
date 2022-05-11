@@ -23,7 +23,7 @@ class SymbolRepositoryImp @Inject constructor(
     override suspend fun getSymbol(): Flow<Resource<HashMap<String,String>>> {
         return flow {
             try {
-                val data = apiService.getSymbol("")
+                val data = apiService.getSymbol()
                 if (data.success) {
                     emit(Resource.Success(data.symbols))
                 } else

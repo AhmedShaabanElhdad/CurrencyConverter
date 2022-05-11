@@ -24,9 +24,6 @@ const val BASE_URL = "https://api.apilayer.com/fixer/"
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
-
-
     /**
      * Provides [HttpLoggingInterceptor] instance
      */
