@@ -1,8 +1,5 @@
 package com.codegrow.data.core
 
-import com.codegrow.data.repository.convertFileName
-import com.codegrow.data.repository.historicalRateFileName
-import com.codegrow.data.repository.symbolFileName
 import com.codegrow.remote.resources.ConversionResponse
 import com.codegrow.remote.resources.HistoricalResponse
 import com.codegrow.remote.resources.SymbolResponse
@@ -17,6 +14,10 @@ import java.io.File
  */
 
 
+const val symbolFileName = "symbols.json"
+const val convertFileName = "convert.json"
+const val historicalRateFileName = "HistoricalRate.json"
+const val unauthorizedFileName = "unauthorized.json"
 
 class TestUtilities {
 

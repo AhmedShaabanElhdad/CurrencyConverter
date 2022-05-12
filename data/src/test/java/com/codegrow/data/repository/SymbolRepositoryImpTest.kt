@@ -21,10 +21,6 @@ import org.junit.Test
 import kotlin.time.ExperimentalTime
 
 
-const val symbolFileName = "symbols.json"
-const val convertFileName = "convert.json"
-const val historicalRateFileName = "HistoricalRate.json"
-const val unauthorizedFileName = "unauthorized.json"
 
 @ExperimentalTime
 @ExperimentalCoroutinesApi
