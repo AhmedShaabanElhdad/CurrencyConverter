@@ -1,11 +1,8 @@
-package com.codegrow.remote
+package com.codegrow.data.core
 
 import com.codegrow.remote.resources.ConversionResponse
 import com.codegrow.remote.resources.HistoricalResponse
 import com.codegrow.remote.resources.SymbolResponse
-import com.codegrow.remote.service.convertFileName
-import com.codegrow.remote.service.historicalRateFileName
-import com.codegrow.remote.service.symbolFileName
 import com.google.gson.Gson
 
 import java.io.File
@@ -17,6 +14,10 @@ import java.io.File
  */
 
 
+const val symbolFileName = "symbols.json"
+const val convertFileName = "convert.json"
+const val historicalRateFileName = "HistoricalRate.json"
+const val unauthorizedFileName = "unauthorized.json"
 
 class TestUtilities {
 

@@ -25,6 +25,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.net.HttpURLConnection
 
 const val symbolFileName = "symbols.json"
+const val convertFileName = "convert.json"
+const val historicalRateFileName = "HistoricalRate.json"
 const val unauthorizedFileName = "unauthorized.json"
 
 @ExperimentalCoroutinesApi
