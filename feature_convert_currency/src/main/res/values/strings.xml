@@ -9,4 +9,7 @@
     <string name="currency">Currency</string>
     <string name="converter">Converter</string>
     <string name="converted_amount">Converted currency</string>
+    <string name="more">See More</string>
+    <string name="Date">Date</string>
+    <string name="base">Base</string>
 </resources>
