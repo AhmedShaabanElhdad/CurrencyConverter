@@ -4,13 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
         tools:context=".ui.detail.DetailFragment">
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/m_chart"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
 
@@ -19,14 +28,13 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:overScrollMode="never"
-            android:visibility="visible"
             android:splitMotionEvents="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_historical"
             android:layout_marginTop="@dimen/spacing_generic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/m_chart"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
 
