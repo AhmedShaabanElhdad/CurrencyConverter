@@ -53,8 +53,10 @@ class DetailsFragment : BaseFragment<FragmentDetailBinding>() {
         val from = "${calender.get(Calendar.YEAR)}-${month}-${day}"
         viewModel.setEvent(DetailsContract.Event.GetHistorical(from,to))
 
-        if (binding.rvRate.adapter == null)
+        if (binding.rvRate.adapter == null) {
             binding.rvRate.adapter = adapter
+            binding.rvRate.isNestedScrollingEnabled = false;
+        }
     }
 
     override val bindLayout: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDetailBinding
