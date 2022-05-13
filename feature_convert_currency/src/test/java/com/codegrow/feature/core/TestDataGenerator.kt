@@ -26,9 +26,9 @@ class TestDataGenerator {
 
         fun generateRatesList() : List<Rate> {
             val symbols:MutableList<Rate>  = mutableListOf()
-            symbols.add(Rate("2012-05-01",1.280135,EUR = 1.296868,USD = 1.314491))
-            symbols.add(Rate("2012-05-02",1.280135,EUR = 1.296868,USD = 1.314491))
             symbols.add(Rate("2012-05-03",1.280135,EUR = 1.296868,USD = 1.314491))
+            symbols.add(Rate("2012-05-02",1.280135,EUR = 1.296868,USD = 1.314491))
+            symbols.add(Rate("2012-05-01",1.280135,EUR = 1.296868,USD = 1.314491))
             return symbols
         }
 
