@@ -80,7 +80,7 @@ class DetailsViewModel @Inject constructor(
 
     private fun mapToArray(data: HashMap<String, Rate>): List<Rate> {
         var rates:MutableList<Rate> = emptyList<Rate>().toMutableList()
-        data.forEach{ (key, value) ->
+        for ((key, value) in data) {
             rates.add(Rate(
                 date = key,
                 CAD = value.CAD,

@@ -123,7 +123,7 @@ class MainViewModel @Inject constructor(
 
     private fun mapToArray(data: HashMap<String, String>): List<Symbol> {
         var symboles:MutableList<Symbol> = emptyList<Symbol>().toMutableList()
-        data.forEach{ (key, value) ->
+        for ((key, value) in data) {
             symboles.add(Symbol(key,value))
         }
         return  symboles
