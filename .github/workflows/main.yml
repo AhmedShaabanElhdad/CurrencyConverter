@@ -3,8 +3,8 @@
 name: CI
 
 on:
-#  push:
-#    branches: [ feature_ci/cd ]
+  push:
+    branches: [ feature_ci/cd ]
   pull_request:
     branches: [ develop ]
 
@@ -30,13 +30,31 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v3
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
       - name: Run Lint
         run: ./gradlew lintDebug
 
-      - name: Upload html test report
+      - name: Upload html lint test report
         uses: actions/upload-artifact@v2
         with:
           name: index.html
           path: feature_convert_currency/build/reports/lint-results-debug.html
+
+  unit_test:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Run Test
+        run: ./gradlew test
+
+      - name: Upload html test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: unit_test_report
+          path: feature_convert_currency/build/reports/tests/testDebugUnitTest/

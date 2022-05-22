@@ -2,8 +2,8 @@ package com.codegrow.data.repository
 
 import androidx.test.filters.SmallTest
 import app.cash.turbine.test
-import com.codegrow.domain.core.MainCoroutineRule
-import com.codegrow.domain.core.TestUtilities
+import com.codegrow.data.core.TestUtilities
+import com.codegrow.data.core.MainCoroutineRule
 import com.codegrow.domain.core.Resource
 import com.codegrow.domain.repository.SymbolRepository
 import com.codegrow.remote.service.ApiService
