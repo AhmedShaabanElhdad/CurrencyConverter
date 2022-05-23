@@ -26,11 +26,6 @@ class MainViewModel @Inject constructor(
     private var _loading: Boolean = false
     val loading: Boolean get() = _loading
 
-
-    init {
-        setEvent(MainContract.Event.GetSymbol)
-    }
-
     override fun createInitialState(): MainContract.State {
         return MainContract.State(
             mainState = MainContract.MainState.Idle
@@ -122,10 +117,10 @@ class MainViewModel @Inject constructor(
     }
 
     private fun mapToArray(data: HashMap<String, String>): List<Symbol> {
-        var symboles:MutableList<Symbol> = emptyList<Symbol>().toMutableList()
+        val symbols:MutableList<Symbol> = emptyList<Symbol>().toMutableList()
         for ((key, value) in data) {
-            symboles.add(Symbol(key,value))
+            symbols.add(Symbol(key,value))
         }
-        return  symboles
+        return  symbols
     }
 }
