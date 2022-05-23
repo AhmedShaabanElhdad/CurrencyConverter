@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        tools:context=".view.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,25 +18,37 @@
         tools:context=".ui.detail.DetailFragment">
 
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/m_chart"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_rate"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:overScrollMode="never"
-            android:visibility="visible"
             android:splitMotionEvents="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_historical"
             android:layout_marginTop="@dimen/spacing_generic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/m_chart"
+           />
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
 </layout>

@@ -64,7 +64,7 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-location:17.1.0'
 
-    implementation 'com.chaos.view:pinview:1.4.4'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     // Hilt dependencies
     implementation "com.google.dagger:hilt-android:$hilt_version"
