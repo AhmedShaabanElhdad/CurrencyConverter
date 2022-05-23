@@ -49,14 +49,39 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v3
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
       - name: Run Unit Test
         run: ./gradlew test
 
-      - name: Upload html test report
+      - name: Upload unit test report
         uses: actions/upload-artifact@v2
         with:
           name: unit_test_report
           path: feature_convert_currency/build/reports/tests/testDebugUnitTest/
+
+  instrumentation_test_report:
+    needs: [unit_test]
+#    assume it is faster
+    runs-on: macos-latest
+    steps:
+
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run espresso tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
+      - name: Upload unit test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: instrument_test_report
+          path: feature_convert_currency/build/reports/androidTests/connected/

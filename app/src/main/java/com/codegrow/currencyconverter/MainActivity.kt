@@ -16,10 +16,4 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
-    external fun getAPIKey(): String
-
-    init {
-        System.loadLibrary("currencyconverter")
-    }
 }
