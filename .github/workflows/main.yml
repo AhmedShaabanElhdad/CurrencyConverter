@@ -65,7 +65,7 @@ jobs:
   instrumentation_test_report:
     needs: [unit_test]
 #    assume it is faster
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
 
       - name: Checkout the code
