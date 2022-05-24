@@ -79,7 +79,7 @@ jobs:
         with:
           api-level: 23
           ndk: 21.0.6113669
-          cmake: 3.10.2.4988404
+#          cmake: 3.10.2.4988404
 #          target: default
 #          arch: x86
 #          profile: Nexus 6
