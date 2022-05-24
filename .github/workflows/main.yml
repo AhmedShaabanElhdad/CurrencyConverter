@@ -25,6 +25,11 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Build with Gradle
+        run: ./gradlew build
+
+
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -42,6 +47,8 @@ jobs:
         with:
           name: index.html
           path: feature_convert_currency/build/reports/lint-results-debug.html
+
+
 
   unit_test:
     needs: [lint]
@@ -62,7 +69,7 @@ jobs:
           name: unit_test_report
           path: feature_convert_currency/build/reports/tests/testDebugUnitTest/
 
-  instrumentation_test_report:
+  instrumentation_test:
     needs: [unit_test]
 #    assume it is faster
     runs-on: macos-latest
@@ -95,3 +102,25 @@ jobs:
         with:
           name: instrument_test_report
           path: feature_convert_currency/build/reports/androidTests/connected/
+
+  apk:
+    needs: [instrumentation_test]
+
+    name: Generate APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Build debug APK
+        run: bash ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/apk/debug/app-debug.apk
