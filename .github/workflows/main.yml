@@ -124,12 +124,12 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: SonarCloud Scan
-        run: ./gradlew app:sonarqude -Dsonar.login=${{  secrets.SONAR_TOKEN  }}
+        run: ./gradlew CurrencyConverter:sonarqude -Dsonar.login=${{  secrets.SONAR_TOKEN  }}
         env:
           GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN  }}
 
   apk:
-    needs: [instrumentation_test]
+    needs: [static-code-analysis]
 
     runs-on: ubuntu-latest
 
