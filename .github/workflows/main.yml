@@ -124,7 +124,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: SonarCloud Scan
-        run: ./gradlew :feature_convert_currency:sonarqude -Dsonar.login=${{  secrets.SONAR_TOKEN  }}
+        run: ./gradlew :feature_convert_currency:sonarqube -Dsonar.login=${{  secrets.SONAR_TOKEN  }}
         env:
           GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN  }}
 
