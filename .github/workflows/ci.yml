@@ -49,7 +49,7 @@ jobs:
       - name: Upload html lint test report
         uses: actions/upload-artifact@v2
         with:
-          name: index.html
+          name: lint.html
           path: feature_convert_currency/build/reports/lint-results-debug.html
 
 

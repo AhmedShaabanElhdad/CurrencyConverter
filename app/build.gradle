@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
     id 'org.sonarqube'
+    id 'com.google.gms.google-services'
 }
 
 android {
