@@ -1,4 +1,8 @@
 {
+  "hosting": {
+    "site": "https://currencyconverter-428e9",
+    "public": "build/web"
+  },
   "project_info": {
     "project_number": "15738147003",
     "project_id": "currencyconverter-428e9",
