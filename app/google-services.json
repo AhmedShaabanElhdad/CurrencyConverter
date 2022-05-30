@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "15738147003-b2ue9ajuritr041250b8ios8ddc8h14d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codegrow.currencyconverter",
+            "certificate_hash": "13344e5f33f57b811ccc550975cfd0166fb524a2"
+          }
+        },
+        {
           "client_id": "15738147003-8l830jkmh8tdaqm6dlqf6krkli5h8d02.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "15738147003-8l830jkmh8tdaqm6dlqf6krkli5h8d02.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "15738147003-ru9eqcm0hhpl6p4evtkn17224u9sot7g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codegrow.currencyconverter"
+              }
             }
           ]
         }
