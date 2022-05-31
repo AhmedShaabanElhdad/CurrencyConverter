@@ -68,3 +68,23 @@ jobs:
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: QA
           file: app-release-unsigned-signed.apk
+
+  deploy-play-store:
+    needs: [ release_apk ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: release.apk
+      - uses: actions/download-artifact@master
+        with:
+          name: mapping.txt
+      - name: Publish to Play Store internal test track
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.codegrow.currencyconverter
+          releaseFile: app-release-unsigned-signed.apk
+          track: internal
+          userFraction: 0.50
+          mappingFile: mapping.txt
