@@ -4,11 +4,9 @@ name: Deploy
 
 on:
   push:
-#    tags:
-#      - 'v*'
-    branches: [ feature_ci/cd ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
   workflow_dispatch:
 
