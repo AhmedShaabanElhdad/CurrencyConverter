@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id "androidx.navigation.safeargs.kotlin"
+    id 'org.sonarqube'
 }
 
 android {
@@ -15,7 +16,11 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -29,6 +34,13 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.10.2'
+        }
     }
     kotlinOptions {
         jvmTarget = '1.8'

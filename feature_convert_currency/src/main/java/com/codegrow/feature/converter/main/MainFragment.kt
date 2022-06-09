@@ -41,6 +41,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.setEvent(MainContract.Event.GetSymbol)
+    }
+
     private fun setupSpinner() {
         binding.spnFirstCountry.adapter = fromAdapter
         binding.spnSecondCountry.adapter = toAdapter
